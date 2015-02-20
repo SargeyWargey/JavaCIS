@@ -3,6 +3,7 @@ package loancalculator;
 
 import java.util.Scanner;
 
+
 public class LoanCalculator {
 
     public static void main(String[] args) {
@@ -19,20 +20,24 @@ public class LoanCalculator {
         	double annualInterestRate = input.nextDouble();   
       
     Double monthlyInterestRate = annualInterestRate/1200;
-    Double partOne = loanAmount * monthlyInterestRate;
-    Double partTwo = (1 -(1/((1 + monthlyInterestRate)))
-    Double monthlyPayment = ;
-                
-    }
+
+    Double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (Math.pow(1/(1 + monthlyInterestRate),(numberOfYears *12))));
+    
+    System.out.println(monthlyPayment);   
+    
+    Double balance = 0.0;
+    //Double interest = 0.0;
+    //Double principal = 0.0;
+    Int i = 0;
+            
     for (i = 1; i <= numberOfYears * 12; i++) { 
     interest = monthlyInterestRate * balance; 
     principal = monthlyPayment - interest; 
     balance = balance - principal; 
     
     System.out.println(i + "\t\t" + interest
-        + "\t\t" + principal + "\t\t" + balance); 
+        + "\t\t" + principal + "\t\t" + balance);      
     }
-            
-            
-            
+
+  }         
 }
